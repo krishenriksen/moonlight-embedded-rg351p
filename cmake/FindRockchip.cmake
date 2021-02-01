@@ -8,7 +8,13 @@ find_library(DRM_LIBRARY
   NAMES libdrm.so
   DOC "Path to libdrm Library"
   PATHS /usr/local/lib /usr/lib /usr/lib/aarch64-linux-gnu /usr/lib/arm-linux-gnueabihf)
-mark_as_advanced(DRM_INCLUDE_DIR)
+mark_as_advanced(DRM_LIBRARY)
+
+find_library(RGA_LIBRARY
+  NAMES librga.so
+  DOC "Path to librga Library"
+  PATHS /usr/local/lib /usr/lib /usr/lib/aarch64-linux-gnu /usr/lib/arm-linux-gnueabihf)
+mark_as_advanced(RGA_LIBRARY)
 
 find_path(ROCKCHIP_INCLUDE_DIR
   NAMES rk_mpi.h
@@ -26,4 +32,4 @@ include(${CMAKE_ROOT}/Modules/FindPackageHandleStandardArgs.cmake)
 FIND_PACKAGE_HANDLE_STANDARD_ARGS(Rockchip DEFAULT_MSG ROCKCHIP_INCLUDE_DIR ROCKCHIP_LIBRARY)
 
 set(ROCKCHIP_INCLUDE_DIRS ${ROCKCHIP_INCLUDE_DIR} ${DRM_INCLUDE_DIR})
-set(ROCKCHIP_LIBRARIES ${ROCKCHIP_LIBRARY} ${DRM_LIBRARY})
+set(ROCKCHIP_LIBRARIES ${ROCKCHIP_LIBRARY} ${DRM_LIBRARY} ${RGA_LIBRARY})
