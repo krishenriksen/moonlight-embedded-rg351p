@@ -36,6 +36,13 @@
 #include <xf86drmMode.h>
 #include <libdrm/drm_fourcc.h>
 
+#define DRM_FORMAT_NV12_10    fourcc_code('N', 'A', '1', '2') /* 2x2 subsampled Cr:Cb plane */
+#define DRM_FORMAT_NV21_10    fourcc_code('N', 'A', '2', '1') /* 2x2 subsampled Cb:Cr plane */
+#define DRM_FORMAT_NV16_10    fourcc_code('N', 'A', '1', '6') /* 2x1 subsampled Cr:Cb plane */
+#define DRM_FORMAT_NV61_10    fourcc_code('N', 'A', '6', '1') /* 2x1 subsampled Cb:Cr plane */
+#define DRM_FORMAT_NV24_10    fourcc_code('N', 'A', '2', '4') /* non-subsampled Cr:Cb plane */
+#define DRM_FORMAT_NV42_10    fourcc_code('N', 'A', '4', '2') /* non-subsampled Cb:Cr plane */
+
 #include <rockchip/rk_mpi.h>
 #include <rga/RgaApi.h>
 
